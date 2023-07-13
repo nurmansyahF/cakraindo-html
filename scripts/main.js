@@ -133,6 +133,8 @@
 
   function func() {
     $('.swiper').each(function(){
+      var t = $(this);
+      var child = t.find('.swiper-slide').length;
       const swiper = new Swiper('.swiper', {
         // Optional parameters
         direction: 'horizontal',
@@ -148,7 +150,25 @@
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
+        on: {
+          init: function () {
+            var activeIndex = this.activeIndex + 1;
+            t.siblings('.navigation').find('.pgrogressbar span').css('width', activeIndex/child * 100+'%');
+            // Lakukan tindakan lain yang diperlukan saat Swiper.js selesai dimuat
+          },
+          slideChange: function () {
+            var activeIndex = this.activeIndex + 1;
+            console.log('Slide index:', activeIndex);
+            t.siblings('.navigation').find('.pgrogressbar span').css('width', activeIndex/totalItems * 100+'%');
+          }
+        }
       });
+      function getTotalItems() {
+        var totalItems = swiper.slides.length;
+        return totalItems;
+      }
+      var totalItems = getTotalItems();
+      var totalItemss = getTotalItems();
     })
 
 

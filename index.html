@@ -96,8 +96,15 @@
   </header>
   <main class="homepage">
 
-    <section class="home-masthaed flex h-screen bg-cover bg-no-repeat" style="background-image: url(images/home-mathead.jpg);">
-      <div class="container mx-auto h-full flex items-end pb-48 justify-between">
+    <section class="home-masthaed flex h-screen bg-cover bg-no-repeat" >
+      <!-- style="background-image: url(images/home-mathead.jpg);" -->
+      <div class="bg absolute w-full h-full top-0 left-0">
+        <!-- <img class="w-full h-full object-cover" src="images/home-mathead.jpg" alt="bg"> -->
+        <video class="w-full h-full object-cover" controls loop autoplay muted>
+          <source src="https://prototype.nurmansyah.com/cakraindo/images/dummy-video.mp4" type="video/mp4" >
+        </video>
+      </div>
+      <div class="container mx-auto h-full flex items-end pb-48 justify-between relative z-10">
         <h1 class="text-[52px] font-bold text-white">Your Trusted Logistics <br>Provider. Goes the Extra Mile <br>With Cakraindo</h1>
 
         <a class="btn-play" href="https://youtu.be/D0UnqGm_miA" data-lity>
@@ -238,6 +245,35 @@
                     </div>
                   </div>
                 </div>
+                <div class="swiper-slide flex h-[25rem]">
+                  <div class="box-item h-full w-4/12 bg-cover relative bg-no-repeat bg-center text-white" style="background-image: url(images/home-service-thumbnail-1.jpg)">
+                    <div class="box-content absolute left-0 bottom-0 p-6 z-10">
+                      <h3 class="text-xl font-medium mb-4">Petroleum Products</h3>
+                      <div class="misc">
+                        <p>This category includes gasoline, diesel fuel, jet fuel, heating oil, lubricants, and other refined petroleum products. They are widely used in transportation, energy, and manufacturing sectors.</p>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="box-item h-full w-4/12 bg-cover relative bg-no-repeat bg-center text-white" style="background-image: url(images/home-service-thumbnail-2.jpg)">
+                    <div class="box-content absolute left-0 bottom-0 p-6 z-10">
+                      <h3 class="text-xl font-medium mb-4">Liquefied Petroleum Gas (LPG)</h3>
+                      <div class="misc">
+                        <p>This category includes gasoline, diesel fuel, jet fuel, heating oil, lubricants, and other refined petroleum products. They are widely used in transportation, energy, and manufacturing sectors.</p>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="box-item h-full w-4/12 bg-cover relative bg-no-repeat bg-center text-white" style="background-image: url(images/home-service-thumbnail-3.jpg)">
+                    <div class="box-content absolute left-0 bottom-0 p-6 z-10">
+                      <h3 class="text-xl font-medium mb-4">T50</h3>
+                      <div class="misc">
+                        <p>This category includes gasoline, diesel fuel, jet fuel, heating oil, lubricants, and other refined petroleum products. They are widely used in transportation, energy, and manufacturing sectors.</p>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="navigation flex items-center gap-10">
@@ -254,7 +290,7 @@
                 </div>
               </div>
               <div class="pgrogressbar relative top-0 left-0 h-[6px]">
-                <span class="block bg-dark900 w-2/3"></span>
+                <span class="block bg-dark900"></span>
               </div>
             </div>
           </div>
