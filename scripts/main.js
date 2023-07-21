@@ -216,6 +216,7 @@
       var t = $(this),
           bc = t.find('.btn-chat');
           wc1 = t.find('.windowchat1'),
+          cls = t.find('.close'),
           wc1btn = wc1.find('a');
       bc.on('click', function(e){
         wc1.toggleClass('show');
@@ -234,8 +235,67 @@
           $(this).parent().removeClass('show');
           $(this).parent().siblings().addClass('show');
         });
+      });
+      cls.each(function(){
+        $(this).click(function(){
+          $(this).parent('.show').removeClass('show');
+        })
       })
-    })
+    });
+
+    function homeMasthead(){
+      $('.home-masthaed').each(function(){
+        function chngVid(){
+          $('.home-masthaed').each(function(){
+            var t = $(this),
+                mc = t.find('.masthead-category'),
+                mv = $('#mastheadVid'),
+                bv = mv.find('source');
+            mc.each(function(){
+              var dsv = $(this).data('shortvid'),
+                  dv = $(this).data('vid');
+              $(this).click(function(){
+                bv.attr('src', dsv);
+                mv[0].load(); // Refresh video
+                mv[0].play();
+                mc.not(this).removeClass('active');
+                $(this).addClass('active');
+              })
+            })
+          });
+        };
+        chngVid();
+
+        let currentTab = 1;
+        const totalTabs = 3;
+        const interval = 6000; // 6 seconds
+
+        function moveTab() {
+          // Reset previous tab to its default state
+          $(`#mc${currentTab}`).removeClass('active');
+
+          // Move to the next tab
+          currentTab = (currentTab % totalTabs) + 1;
+
+          // Set the next tab to the active state
+          $(`#mc${currentTab}`).addClass('active').trigger('click');
+
+          // Start the loading bar animation
+          startLoadingBar();
+        }
+
+        function startLoadingBar() {
+          $('.bar').css('width', '0%');
+          $('.bar').animate({ width: '100%' }, interval, 'linear');
+        }
+
+        // Initially start the loading bar animation
+        startLoadingBar();
+
+        // Move to the next tab every 6 seconds
+        setInterval(moveTab, interval);
+      })
+    }homeMasthead();
 
 
   }; // end of func

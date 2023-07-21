@@ -467,6 +467,22 @@ a.read-article:hover:before{
   position: relative
 }
 
+.home-masthaed .loadbar{
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
+
+.home-masthaed .loadbar span{
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #FFF;
+  transition: all .3s linear
+}
+
 .home-aboutus .bg-g{
   position: relative;
 }
@@ -489,6 +505,25 @@ a.read-article:hover:before{
   position: relative;
   z-index: 10;
 }
+
+.sectors-wrap .sectors-item .thumbnail{
+  position: relative;
+}
+.sectors-wrap .sectors-item .thumbnail:before{
+  content:"";
+  padding: 28% 0;
+  width: 100%;
+  display: block;
+}
+.sectors-wrap .sectors-item .thumbnail img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .facilities-list li{
   margin-bottom: 0 !important;
   font-size: 14px;
@@ -538,6 +573,26 @@ a.read-article:hover:before{
   bottom: 0;
 }
 
+.sustainability .category-tab{
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.sustainability .category-tab::-webkit-scrollbar {
+  height: 5px;
+}
+
+.sustainability .category-tab::-webkit-scrollbar-thumb {
+  background: #067E54;
+}
+
+.sustainability .category-tab::-webkit-scrollbar-thumb:hover {
+  background: #F9FBFA;
+}
+
+.sustainability .category-tab a{
+  flex: 0 0 33.333333%;
+}
 
 .sustainability .category-tab a.active{
   background: #F9FBFA;
@@ -785,6 +840,24 @@ footer .bg-right:after{
 }
 
 
+.services-wrap .services-card .box-img{
+  position: relative;
+}
+.services-wrap .services-card .box-img:before{
+  content:"";
+  padding: 24.33% 0;
+  width: 100%;
+  display: block;
+}
+.services-wrap .services-card .box-img img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .form-control input[disabled]{
   background: rgba(247, 247, 247, 1);
   color: rgba(26, 35, 30, 1);
@@ -898,6 +971,33 @@ footer .bg-right:after{
   border-color: #1565BE;
 }
 
+
+.customselect{
+  appearance: none; /* Untuk menghilangkan tampilan bawaan pada beberapa browser */
+  -webkit-appearance: none; /* Untuk Safari */
+  -moz-appearance: none; /* Untuk Firefox */
+  position: relative;
+  background: url(../images/ic-carret-gray-green.svg) no-repeat;
+  background-position: calc(100% - 16px) center;
+  background-size: 16px;
+  padding-right: 24px;
+}
+.customselect option{
+  padding: 8px;
+}
+
+.customselect:focus, .customselect:focus-visible{
+  background: url(../images/ic-carret-gray-green-top.svg) no-repeat;
+  background-position: calc(100% - 16px) center;
+  outline: none;
+  box-shadow: none;
+}
+
+.sort .customselect{
+  background-position: calc(100% - 4px) center;
+  padding: 8px;
+  padding-right: 24px;
+}
 
 
 /* Responsive */
